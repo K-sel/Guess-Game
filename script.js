@@ -11,18 +11,18 @@ const game = {
 
     // Method to display "Too high!" message
     tooHigh() {
-        document.querySelector("p#hint").textContent = "Too high!";
+        document.querySelector("#hint").textContent = "Too high!";
     },
     // Method to display "Too low!" message
     tooLow() {
-        document.querySelector("p#hint").textContent = "Too low!";
+        document.querySelector("#hint").textContent = "Too low!";
     },
     // Method to handle correct guess
     correct() {
         button.disabled = true; // Disable the button
         document.querySelector("h1").textContent = "Correct !"; // Update heading
         document.querySelector("body").style.backgroundColor = "green"; // Change background color
-        document.querySelector("p#hint").textContent = "Click again to play a new game!"; // Update hint
+        document.querySelector("#hint").textContent = "Click again to play a new game!"; // Update hint
         document.querySelector("#answer").textContent = this.answer; // Show the correct answer
         this.score(); // Update the score
     },
@@ -43,7 +43,7 @@ const game = {
 
         // Handle different cases based on the input value
         if (value == "") {
-            document.querySelector("p#hint").textContent = "Please enter a number!";
+            document.querySelector("#hint").textContent = "Please enter a number!";
         } else if (value == this.answer) {
             this.correct();
         } else if (value < this.answer) {
@@ -60,9 +60,9 @@ const game = {
         document.querySelector("h1").textContent = "Guess My Number!"; // Reset heading
         document.querySelector("#score").textContent = ""; // Clear score
         document.querySelector("#answer").textContent = "?"; // Reset answer display
-        document.querySelector("p#hint").textContent = "Start guessing..."; // Reset hint
+        document.querySelector("#hint").textContent = "Start guessing..."; // Reset hint
         document.querySelector("body").style.backgroundColor = "#222"; // Reset background color
-        document.querySelector("p#hint").style.color = "white"; // Reset hint color
+        document.querySelector("#hint").style.color = "white"; // Reset hint color
         document.querySelector("#guess").value = ""; // Clear input field
     },
 };
