@@ -21,7 +21,7 @@ const game = {
     correct() {
         button.disabled = true; // Disable the button
         document.querySelector("h1").textContent = "Correct !"; // Update heading
-        document.querySelector("body").style.backgroundColor = "green"; // Change background color
+        document.body.style.backgroundColor = "green"; // Change background color
         document.querySelector("#hint").textContent = "Click again to play a new game!"; // Update hint
         document.querySelector("#answer").textContent = this.answer; // Show the correct answer
         this.score(); // Update the score
@@ -42,7 +42,7 @@ const game = {
         this.tries++; // Increment tries
 
         // Handle different cases based on the input value
-        if (value == "") {
+        if (typeof value !== "number" || value === "") {
             document.querySelector("#hint").textContent = "Please enter a number!";
         } else if (value == this.answer) {
             this.correct();
@@ -61,7 +61,7 @@ const game = {
         document.querySelector("#score").textContent = ""; // Clear score
         document.querySelector("#answer").textContent = "?"; // Reset answer display
         document.querySelector("#hint").textContent = "Start guessing..."; // Reset hint
-        document.querySelector("body").style.backgroundColor = "#222"; // Reset background color
+        document.body.style.backgroundColor = "#222"; // Reset background color
         document.querySelector("#hint").style.color = "white"; // Reset hint color
         document.querySelector("#guess").value = ""; // Clear input field
     },
